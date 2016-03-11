@@ -54,7 +54,6 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  \Monolog\Logger  $monolog
      * @param  \Illuminate\Contracts\Events\Dispatcher  $dispatcher
-     * @return void
      */
     public function __construct(MonologLogger $monolog, Dispatcher $dispatcher = null)
     {
@@ -70,11 +69,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function emergency($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -82,11 +80,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function alert($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -94,11 +91,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function critical($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -106,11 +102,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function error($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -118,11 +113,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function warning($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -130,11 +124,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function notice($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -142,11 +135,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function info($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -154,11 +146,10 @@ class Writer implements LogContract, PsrLoggerInterface
      *
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function debug($message, array $context = [])
     {
-        return $this->writeLog(__FUNCTION__, $message, $context);
+        $this->writeLog(__FUNCTION__, $message, $context);
     }
 
     /**
@@ -167,11 +158,10 @@ class Writer implements LogContract, PsrLoggerInterface
      * @param  string  $level
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function log($level, $message, array $context = [])
     {
-        return $this->writeLog($level, $message, $context);
+        $this->writeLog($level, $message, $context);
     }
 
     /**
@@ -180,11 +170,10 @@ class Writer implements LogContract, PsrLoggerInterface
      * @param  string  $level
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     public function write($level, $message, array $context = [])
     {
-        return $this->writeLog($level, $message, $context);
+        $this->writeLog($level, $message, $context);
     }
 
     /**
@@ -193,7 +182,6 @@ class Writer implements LogContract, PsrLoggerInterface
      * @param  string  $level
      * @param  string  $message
      * @param  array  $context
-     * @return void
      */
     protected function writeLog($level, $message, $context)
     {
@@ -208,7 +196,6 @@ class Writer implements LogContract, PsrLoggerInterface
      * @param  string  $path
      * @param  string  $level
      * @param bool|true $bubble
-     * @return void
      */
     public function useFiles($path, $level = 'debug', $bubble = true)
     {
@@ -224,7 +211,6 @@ class Writer implements LogContract, PsrLoggerInterface
      * @param  int     $days
      * @param  string  $level
      * @param bool|true $bubble
-     * @return void
      */
     public function useDailyFiles($path, $days = 0, $level = 'debug', $bubble = true)
     {
@@ -254,7 +240,6 @@ class Writer implements LogContract, PsrLoggerInterface
      * @param  string  $level
      * @param  int  $messageType
      * @param bool|true $bubble
-     * @return void
      */
     public function useErrorLog($level = 'debug', $messageType = ErrorLogHandler::OPERATING_SYSTEM, $bubble = true)
     {
@@ -269,7 +254,6 @@ class Writer implements LogContract, PsrLoggerInterface
      * Register a new callback handler for when a log event is triggered.
      *
      * @param  \Closure  $callback
-     * @return void
      *
      * @throws \RuntimeException
      */
@@ -288,7 +272,6 @@ class Writer implements LogContract, PsrLoggerInterface
      * @param  string  $level
      * @param  string  $message
      * @param  array   $context
-     * @return void
      */
     protected function fireLogEvent($level, $message, array $context = [])
     {
@@ -370,7 +353,6 @@ class Writer implements LogContract, PsrLoggerInterface
      * Set the event dispatcher instance.
      *
      * @param  \Illuminate\Contracts\Events\Dispatcher  $dispatcher
-     * @return void
      */
     public function setEventDispatcher(Dispatcher $dispatcher)
     {
